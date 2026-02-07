@@ -5,6 +5,7 @@ description: "Poznaj skuteczne strategie budowania marki online od podstaw. Dowi
 date: 2026-02-07 13:00:31 +0100
 category: Marketing
 keywords: budowanie marki online, strategia marki, rozpoznawalność marki, marka osobista, content marketing, media społecznościowe, pozycjonowanie strony, employer branding
+image: https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80
 author: Kaynel Team
 ---
 

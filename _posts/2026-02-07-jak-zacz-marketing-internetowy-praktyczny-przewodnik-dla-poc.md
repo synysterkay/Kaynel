@@ -5,6 +5,7 @@ description: "Dowiedz się, jak zacząć marketing internetowy krok po kroku! Pr
 date: 2026-02-07 12:56:15 +0100
 category: Marketing
 keywords: marketing internetowy dla początkujących, jak zacząć marketing online, podstawy marketingu internetowego, strategia marketingowa krok po kroku, marketing w mediach społecznościowych, content marketing dla firm, darmowe narzędzia marketingowe
+image: https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80
 author: Kaynel Team
 ---
 

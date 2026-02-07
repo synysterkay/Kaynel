@@ -5,6 +5,7 @@ description: "Odkryj eksperckie porady o projektowaniu stron, tworzeniu aplikacj
 date: 2025-01-15 10:00:00 +0100
 category: Marketing
 keywords: marketing cyfrowy, projektowanie stron, SEO, tworzenie aplikacji, automatyzacja marketingu, agencja marketingowa
+image: https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80
 author: Zespół Kaynel
 ---
 

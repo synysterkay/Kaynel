@@ -5,6 +5,7 @@ description: "Sprawdź aktualny cennik na 2026 rok i dowiedz się, ile *naprawd�
 date: 2026-02-07 13:01:50 +0100
 category: Aplikacje
 keywords: koszt aplikacji mobilnej 2026, cena aplikacji mobilnej Polska, wycena aplikacji mobilnej, cennik aplikacji 2026, ile kosztuje stworzenie aplikacji, budżet na aplikację mobilną, cena developmentu aplikacji
+image: https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80
 author: Kaynel Team
 ---
 

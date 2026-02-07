@@ -5,6 +5,7 @@ description: "Wybierz idealny CRM dla małej firmy! Sprawdź, na co zwrócić uw
 date: 2026-02-07 12:57:50 +0100
 category: Automatyzacja
 keywords: CRM dla małych firm, wybór systemu CRM, oprogramowanie CRM dla małych przedsiębiorstw, jak wybrać CRM, CRM wspierający rozwój, tani CRM dla firmy, porównanie systemów CRM
+image: https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80
 author: Kaynel Team
 ---
 

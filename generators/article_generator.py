@@ -89,6 +89,66 @@ CATEGORIES = {
     "pl": ["Strony WWW", "Aplikacje", "SEO", "Automatyzacja", "Marketing"]
 }
 
+# Featured images for blog posts by category (Unsplash free images)
+CATEGORY_IMAGES = {
+    "Strony WWW": [
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",  # Web design workspace
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",  # Code on screen
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",  # Dashboard design
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",  # Laptop with design
+        "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80",  # UI/UX design
+        "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",  # Web development
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",  # Coding laptop
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",  # Programming code
+    ],
+    "Aplikacje": [
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",  # Mobile app
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",  # Phone apps
+        "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=800&q=80",  # App development
+        "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=800&q=80",  # Mobile UI
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=800&q=80",  # App on phone
+        "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=800&q=80",  # Android phone
+        "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80",  # iPhone apps
+        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",  # App wireframe
+    ],
+    "SEO": [
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",  # Analytics
+        "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&q=80",  # Search data
+        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=80",  # SEO charts
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",  # Data analytics
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",  # Dashboard
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",  # Screens data
+        "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80",  # Google search
+        "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&q=80",  # Content writing
+    ],
+    "Automatyzacja": [
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",  # Robot automation
+        "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",  # AI automation
+        "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80",  # Email automation
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",  # Team workflow
+        "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",  # CRM dashboard
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",  # Marketing dashboard
+        "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80",  # Email marketing
+        "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",  # Chatbot
+    ],
+    "Marketing": [
+        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80",  # Marketing strategy
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",  # Business meeting
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",  # Team presentation
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",  # Business growth
+        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",  # Social media
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",  # Marketing analytics
+        "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&q=80",  # Digital marketing
+        "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?w=800&q=80",  # Brand strategy
+    ]
+}
+
+
+def get_image_for_category(category: str) -> str:
+    """Get a random image URL for the given category."""
+    images = CATEGORY_IMAGES.get(category, CATEGORY_IMAGES["Marketing"])
+    return random.choice(images)
+
 
 def init_client():
     """Initialize DeepSeek API client."""
@@ -203,13 +263,17 @@ Pamiętaj: Zacznij bezpośrednio od wstępu, bez tytułu H1."""
     
     keywords = keywords_response.choices[0].message.content.strip()
     
+    # Get a featured image for this category
+    image = get_image_for_category(category)
+    
     return {
         "title": title,
         "content": content,
         "description": description,
         "keywords": keywords,
         "category": category,
-        "topic": topic
+        "topic": topic,
+        "image": image
     }
 
 
@@ -260,6 +324,7 @@ description: "{article['description']}"
 date: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} +0100
 category: {article['category']}
 keywords: {article['keywords']}
+image: {article['image']}
 author: Kaynel Team
 ---
 
