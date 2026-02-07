@@ -1,0 +1,67 @@
+# Kaynel - Digital Agency Website
+# Jekyll Configuration
+
+# Site settings
+title: Kaynel - Digital Agency Blog
+description: "Expert insights on web design, app development, SEO strategies, and marketing automation. Tips and guides to elevate your digital presence."
+author: Kaynel
+email: hello@kaynel.pl
+phone: "+48 888 962 765"
+
+# URLs
+url: "https://synysterkay.github.io"
+baseurl: "/Kaynel"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Kaynel"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Social links
+social:
+  linkedin: "https://www.linkedin.com/company/85637622/"
+  instagram: "https://www.instagram.com/kaynelagency/"
+  facebook: "https://facebook.com/kaynelagency"
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - cache
+  - venv
+  - "*.py"
+  - requirements.txt
+  - README.md
+  - .github
+
+# SEO
+lang: en
