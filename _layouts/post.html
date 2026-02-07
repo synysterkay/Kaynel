@@ -312,7 +312,7 @@ layout: default
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Back to Blog
+                Wróć do Bloga
             </a>
             <div class="post-meta">
                 {% if page.category %}<span class="post-category">{{ page.category }}</span>{% endif %}
@@ -333,7 +333,7 @@ layout: default
         <nav class="post-navigation">
             {% if page.previous.url %}
             <a href="{{ page.previous.url | prepend: site.baseurl }}" class="post-nav-link prev">
-                <span class="post-nav-label">← Previous Article</span>
+                <span class="post-nav-label">← Poprzedni artykuł</span>
                 <span class="post-nav-title">{{ page.previous.title }}</span>
             </a>
             {% else %}
@@ -342,7 +342,7 @@ layout: default
             
             {% if page.next.url %}
             <a href="{{ page.next.url | prepend: site.baseurl }}" class="post-nav-link next">
-                <span class="post-nav-label">Next Article →</span>
+                <span class="post-nav-label">Następny artykuł →</span>
                 <span class="post-nav-title">{{ page.next.title }}</span>
             </a>
             {% endif %}

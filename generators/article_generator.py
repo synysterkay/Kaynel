@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Article Generator for Kaynel Blog
-Uses DeepSeek API to generate SEO-optimized articles about digital marketing,
+Article Generator for Kaynel Blog (Polish Language)
+Uses DeepSeek API to generate SEO-optimized articles in Polish about digital marketing,
 web design, app development, SEO strategies, and marketing automation.
+Optimized for Polish market keywords and search trends.
 """
 
 import os
@@ -17,76 +18,76 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 POSTS_DIR = Path("_posts")
 ARTICLES_PER_RUN = 5
 
-# Topics for article generation
+# High-traffic Polish keywords and topics for better ranking
 TOPICS = [
-    # Web Design
-    "modern website design trends",
-    "responsive web design best practices",
-    "landing page optimization",
-    "website usability improvements",
-    "web design psychology and user experience",
-    "minimalist design principles",
-    "color theory for websites",
-    "typography best practices for web",
-    "website loading speed optimization",
-    "mobile-first design strategies",
+    # Strony internetowe (Web Design) - High volume Polish keywords
+    "jak stworzyć stronę internetową dla firmy",
+    "nowoczesne trendy w projektowaniu stron www 2026",
+    "responsywna strona internetowa dlaczego jest ważna",
+    "optymalizacja landing page zwiększenie konwersji",
+    "UX design najlepsze praktyki dla polskich firm",
+    "ile kosztuje strona internetowa w Polsce",
+    "wordpress vs dedykowana strona internetowa",
+    "szybkość ładowania strony jak poprawić",
+    "certyfikat SSL dlaczego jest niezbędny",
+    "strona internetowa dla małej firmy poradnik",
     
-    # App Development
-    "mobile app development trends",
-    "cross-platform app development",
-    "progressive web apps benefits",
-    "app user onboarding strategies",
-    "mobile app monetization",
-    "app store optimization ASO",
-    "native vs hybrid app development",
-    "app performance optimization",
-    "mobile app security practices",
-    "app analytics and tracking",
+    # Aplikacje mobilne (App Development) - Trending Polish searches
+    "jak stworzyć aplikację mobilną dla biznesu",
+    "ile kosztuje aplikacja mobilna w Polsce 2026",
+    "aplikacja natywna vs hybrydowa co wybrać",
+    "PWA progressive web app korzyści dla firmy",
+    "jak wypromować aplikację w App Store i Google Play",
+    "trendy w tworzeniu aplikacji mobilnych",
+    "flutter vs react native porównanie",
+    "bezpieczeństwo aplikacji mobilnych najlepsze praktyki",
+    "monetyzacja aplikacji mobilnej strategie",
+    "UX w aplikacjach mobilnych jak zwiększyć retencję",
     
-    # SEO
-    "SEO strategies for small business",
-    "local SEO optimization tips",
-    "technical SEO audit guide",
-    "content marketing for SEO",
-    "link building strategies",
-    "keyword research techniques",
-    "on-page SEO optimization",
-    "SEO for e-commerce websites",
-    "voice search optimization",
-    "SEO analytics and reporting",
+    # SEO - Top Polish SEO keywords
+    "pozycjonowanie stron internetowych poradnik",
+    "SEO lokalne dla firm w Polsce",
+    "jak wypozycjonować stronę w Google",
+    "słowa kluczowe jak je dobierać",
+    "link building strategie 2026",
+    "audyt SEO co sprawdzić",
+    "content marketing a pozycjonowanie",
+    "SEO dla sklepów internetowych ecommerce",
+    "Google Analytics jak analizować ruch",
+    "pozycjonowanie długi ogon long tail",
+    "optymalizacja treści pod SEO",
+    "indeksowanie strony w Google problemy i rozwiązania",
     
-    # Marketing Automation
-    "email marketing automation",
-    "marketing automation tools comparison",
-    "lead nurturing strategies",
-    "customer journey automation",
-    "chatbot implementation guide",
-    "CRM integration best practices",
-    "social media automation",
-    "marketing workflow optimization",
-    "personalization in marketing",
-    "A/B testing automation",
+    # Marketing automation - Polish business keywords
+    "automatyzacja marketingu dla małych firm",
+    "email marketing jak zwiększyć open rate",
+    "CRM dla małej firmy jaki wybrać",
+    "chatbot na stronie internetowej korzyści",
+    "lead nurturing automatyzacja lejka sprzedażowego",
+    "marketing automation narzędzia porównanie",
+    "personalizacja w marketingu online",
+    "remarketing jak odzyskać klientów",
+    "automatyzacja social media narzędzia",
+    "newsletter jak budować listę mailingową",
     
-    # Digital Marketing
-    "digital marketing strategy planning",
-    "social media marketing tips",
-    "content marketing strategies",
-    "PPC advertising optimization",
-    "conversion rate optimization CRO",
-    "brand awareness campaigns",
-    "influencer marketing guide",
-    "video marketing strategies",
-    "customer retention strategies",
-    "marketing ROI measurement"
+    # Digital Marketing - High search volume Polish terms
+    "marketing internetowy dla początkujących",
+    "jak reklamować firmę w internecie",
+    "reklama Google Ads poradnik",
+    "marketing w social media strategia",
+    "Facebook Ads vs Google Ads co wybrać",
+    "influencer marketing w Polsce",
+    "content marketing strategia dla firmy",
+    "video marketing trendy 2026",
+    "budowanie marki online",
+    "analityka marketingowa KPI które śledzić",
+    "konwersja na stronie jak zwiększyć sprzedaż",
+    "customer journey mapowanie ścieżki klienta"
 ]
 
-CATEGORIES = [
-    "Web Design",
-    "App Development", 
-    "SEO",
-    "Marketing Automation",
-    "Digital Marketing"
-]
+CATEGORIES = {
+    "pl": ["Strony WWW", "Aplikacje", "SEO", "Automatyzacja", "Marketing"]
+}
 
 
 def init_client():
@@ -104,50 +105,52 @@ def get_category_for_topic(topic: str) -> str:
     """Determine category based on topic keywords."""
     topic_lower = topic.lower()
     
-    if any(kw in topic_lower for kw in ["web design", "website", "landing page", "usability", "typography", "color", "minimalist"]):
-        return "Web Design"
-    elif any(kw in topic_lower for kw in ["app", "mobile", "native", "hybrid", "pwa"]):
-        return "App Development"
-    elif any(kw in topic_lower for kw in ["seo", "search", "keyword", "link building", "technical seo"]):
+    if any(kw in topic_lower for kw in ["stron", "www", "landing", "wordpress", "ssl", "ładowania", "responsyw"]):
+        return "Strony WWW"
+    elif any(kw in topic_lower for kw in ["aplikacj", "mobiln", "app", "flutter", "react native", "pwa"]):
+        return "Aplikacje"
+    elif any(kw in topic_lower for kw in ["seo", "pozycjonow", "google", "słowa kluczowe", "link building", "indeksow"]):
         return "SEO"
-    elif any(kw in topic_lower for kw in ["automation", "email", "crm", "chatbot", "workflow", "lead"]):
-        return "Marketing Automation"
+    elif any(kw in topic_lower for kw in ["automatyzacj", "email", "crm", "chatbot", "newsletter", "lead"]):
+        return "Automatyzacja"
     else:
-        return "Digital Marketing"
+        return "Marketing"
 
 
 def generate_article(client: OpenAI, topic: str) -> dict:
-    """Generate an SEO-optimized article using DeepSeek API."""
+    """Generate an SEO-optimized article in Polish using DeepSeek API."""
     
     category = get_category_for_topic(topic)
     
-    system_prompt = """You are an expert digital marketing writer creating SEO-optimized blog articles for Kaynel, a premium digital marketing agency based in Poland. 
+    system_prompt = """Jesteś ekspertem od marketingu cyfrowego piszącym artykuły SEO w języku polskim dla Kaynel - agencji marketingowej premium z Polski.
 
-Write comprehensive, valuable, actionable content that:
-- Provides real value to business owners and marketing professionals
-- Uses clear, professional language
-- Includes practical tips and examples
-- Is optimized for search engines with natural keyword usage
-- Has engaging headers and subheaders
-- Is between 1500-2500 words
+Twórz wartościowe, kompleksowe treści, które:
+- Są napisane płynną, profesjonalną polszczyzną
+- Zawierają praktyczne porady i przykłady z polskiego rynku
+- Są zoptymalizowane pod SEO z naturalnym użyciem słów kluczowych
+- Mają angażujące nagłówki i podnagłówki
+- Liczą 1500-2500 słów
+- Odpowiadają na pytania polskich przedsiębiorców
 
-Format the article in Markdown with proper headings (## for main sections, ### for subsections).
+Formatuj artykuł w Markdown z poprawnymi nagłówkami (## dla głównych sekcji, ### dla podsekcji).
 
-IMPORTANT: Do NOT include the title as an H1 at the beginning - just start with the introduction paragraph.
-Do NOT include any frontmatter or metadata - just the article content."""
+WAŻNE: NIE dodawaj tytułu jako H1 na początku - zacznij od wstępu.
+NIE dodawaj frontmatter ani metadanych - tylko treść artykułu.
 
-    user_prompt = f"""Write a comprehensive, SEO-optimized blog article about: {topic}
+Używaj słów kluczowych naturalnie w tekście, nagłówkach i pierwszych akapitach."""
 
-The article should:
-1. Start with an engaging introduction that hooks the reader
-2. Have 4-6 main sections with clear headings (use ##)
-3. Include practical, actionable advice
-4. Use relevant statistics or examples where appropriate
-5. End with a compelling conclusion and call-to-action
+    user_prompt = f"""Napisz kompleksowy artykuł SEO w języku polskim na temat: {topic}
 
-Target audience: Business owners and marketing professionals looking to improve their digital presence.
+Artykuł powinien:
+1. Zaczynać się od angażującego wstępu z głównym słowem kluczowym
+2. Mieć 4-6 głównych sekcji z jasnymi nagłówkami (użyj ##)
+3. Zawierać praktyczne, działające porady
+4. Używać statystyk i przykładów z polskiego rynku
+5. Kończyć się przekonującym podsumowaniem i wezwaniem do działania
 
-Remember: Start directly with the introduction, no H1 title."""
+Grupa docelowa: Polscy przedsiębiorcy i specjaliści marketingu szukający sposobów na rozwój firmy online.
+
+Pamiętaj: Zacznij bezpośrednio od wstępu, bez tytułu H1."""
 
     response = client.chat.completions.create(
         model="deepseek-chat",
@@ -161,12 +164,12 @@ Remember: Start directly with the introduction, no H1 title."""
     
     content = response.choices[0].message.content.strip()
     
-    # Generate title
+    # Generate Polish title
     title_response = client.chat.completions.create(
         model="deepseek-chat",
         messages=[
-            {"role": "system", "content": "Generate a compelling, SEO-friendly blog title. Return ONLY the title text, no quotes or extra formatting."},
-            {"role": "user", "content": f"Generate a catchy, SEO-optimized title for an article about: {topic}"}
+            {"role": "system", "content": "Wygeneruj chwytliwy tytuł artykułu SEO w języku polskim. Zwróć TYLKO tekst tytułu, bez cudzysłowów. Tytuł powinien zawierać główne słowo kluczowe i zachęcać do kliknięcia."},
+            {"role": "user", "content": f"Wygeneruj tytuł SEO dla artykułu o: {topic}"}
         ],
         max_tokens=100,
         temperature=0.8
@@ -174,12 +177,12 @@ Remember: Start directly with the introduction, no H1 title."""
     
     title = title_response.choices[0].message.content.strip().strip('"\'')
     
-    # Generate meta description
+    # Generate Polish meta description
     desc_response = client.chat.completions.create(
         model="deepseek-chat",
         messages=[
-            {"role": "system", "content": "Generate a compelling meta description (150-160 characters). Return ONLY the description text."},
-            {"role": "user", "content": f"Generate an SEO meta description for an article titled: {title}"}
+            {"role": "system", "content": "Wygeneruj meta description (150-160 znaków) w języku polskim. Zwróć TYLKO opis. Użyj słowa kluczowego i zachęć do kliknięcia."},
+            {"role": "user", "content": f"Wygeneruj meta description SEO dla artykułu zatytułowanego: {title}"}
         ],
         max_tokens=80,
         temperature=0.7
@@ -187,12 +190,12 @@ Remember: Start directly with the introduction, no H1 title."""
     
     description = desc_response.choices[0].message.content.strip().strip('"\'')[:160]
     
-    # Generate keywords
+    # Generate Polish keywords
     keywords_response = client.chat.completions.create(
         model="deepseek-chat",
         messages=[
-            {"role": "system", "content": "Generate 5-7 relevant SEO keywords, comma-separated. Return ONLY the keywords."},
-            {"role": "user", "content": f"Generate SEO keywords for: {title}"}
+            {"role": "system", "content": "Wygeneruj 5-7 słów kluczowych SEO po polsku, oddzielonych przecinkami. Zwróć TYLKO słowa kluczowe. Uwzględnij główne frazy i long-tail keywords."},
+            {"role": "user", "content": f"Wygeneruj słowa kluczowe SEO dla: {title}"}
         ],
         max_tokens=100,
         temperature=0.5

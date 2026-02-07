@@ -2,11 +2,15 @@
 # Jekyll Configuration
 
 # Site settings
-title: Kaynel - Digital Agency Blog
-description: "Expert insights on web design, app development, SEO strategies, and marketing automation. Tips and guides to elevate your digital presence."
-author: Kaynel
+title: Kaynel - Blog o Marketingu Cyfrowym
+description: "Eksperckie porady o projektowaniu stron, tworzeniu aplikacji, strategiach SEO i automatyzacji marketingu. Praktyczne wskazówki dla polskich firm."
+author:
+  name: Kaynel
+  email: hello@kaynel.pl
+  url: "https://synysterkay.github.io/Kaynel"
 email: hello@kaynel.pl
 phone: "+48 888 962 765"
+lang: pl
 
 # URLs
 url: "https://synysterkay.github.io"

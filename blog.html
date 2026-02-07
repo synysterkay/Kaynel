@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Blog - Digital Marketing Insights | Kaynel
-description: Expert articles on web design, app development, SEO, and marketing automation. Stay updated with the latest digital trends and strategies.
+title: Blog - Marketing Cyfrowy i SEO | Kaynel
+description: Eksperckie artykuły o projektowaniu stron, tworzeniu aplikacji, SEO i automatyzacji marketingu. Bądź na bieżąco z najnowszymi trendami.
 ---
 
 <!DOCTYPE html>
@@ -194,8 +194,8 @@ description: Expert articles on web design, app development, SEO, and marketing 
     <!-- Blog Hero -->
     <section class="blog-hero">
         <div class="blog-hero-content">
-            <h1>Digital Insights Blog</h1>
-            <p>Expert articles on web design, app development, SEO strategies, and marketing automation to help your business thrive online.</p>
+            <h1>Blog o Marketingu Cyfrowym</h1>
+            <p>Eksperckie artykuły o projektowaniu stron, tworzeniu aplikacji, strategiach SEO i automatyzacji marketingu, które pomogą Twojej firmie odnieść sukces online.</p>
         </div>
     </section>
 
@@ -220,7 +220,7 @@ description: Expert articles on web design, app development, SEO, and marketing 
                     <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
                     <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
                     <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card-link">
-                        Read More
+                        Czytaj więcej
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -230,8 +230,8 @@ description: Expert articles on web design, app development, SEO, and marketing 
             {% endfor %}
         {% else %}
         <div class="no-posts" style="grid-column: 1 / -1;">
-            <h2>Coming Soon!</h2>
-            <p>Our expert articles are being prepared. Check back soon for insights on web design, SEO, and digital marketing.</p>
+            <h2>Wkrótce!</h2>
+            <p>Nasze eksperckie artykuły są w przygotowaniu. Wróć wkrótce po porady o projektowaniu stron, SEO i marketingu cyfrowym.</p>
         </div>
         {% endif %}
     </div>
