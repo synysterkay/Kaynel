@@ -7,14 +7,14 @@ description: "Eksperckie porady o projektowaniu stron, tworzeniu aplikacji, stra
 author:
   name: Kaynel
   email: hello@kaynel.pl
-  url: "https://synysterkay.github.io/Kaynel"
+  url: "https://kaynel.pl"
 email: hello@kaynel.pl
 phone: "+48 888 962 765"
 lang: pl
 
 # URLs
-url: "https://synysterkay.github.io"
-baseurl: "/Kaynel"
+url: "https://kaynel.pl"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
