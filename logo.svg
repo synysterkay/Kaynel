@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Kaynel</title>
+<rect width="512" height="512" fill="#ffffff"/>
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#2563eb"/>
+<stop offset="100%" stop-color="#7c3aed"/>
+</linearGradient>
+</defs>
+<path fill="url(#g)" d="M156 128h56v104l100-104h72l-112 116 120 140h-76l-88-104-16 16v88h-56z"/>
+</svg>
